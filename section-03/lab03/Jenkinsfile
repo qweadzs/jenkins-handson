@@ -25,7 +25,7 @@ pipeline {
           notifySlack("Started", "#00FF00")
         }        
         echo "Git clone from gitlab repository"
-        git branch: 'dev', url: 'https://gitlab.com/nexweb/jenkins-handson.git',
+        git branch: 'dev', url: 'https://gitlab.com/qweadzs/jenkins-handson.git',
 	credentialsId: 'github-access-token'
       }
     }
@@ -97,7 +97,7 @@ pipeline {
 
   	stage('Clone the manifest from git') {
       steps {
-        git url: 'https://gitlab.com/nexweb/deploy-sample-service.git', branch: 'dev'
+        git url: 'https://gitlab.com/qweadzs/deploy-sample-service.git', branch: 'dev'
       }
     }
   
