@@ -130,17 +130,17 @@ pipeline {
 		}
   }
 
-  post {
-    success {
-      script {
-        // notifySlack("${currentBuild.currentResult}", "#00FF00")
-      }
-    }
+  // post {
+  //   success {
+  //     script {
+  //       notifySlack("${currentBuild.currentResult}", "#00FF00")
+  //     }
+  //   }
 
-    failure {
-      script {
-        // notifySlack("${currentBuild.currentResult}", "#FF0000")
-      }
-    }
-  }  
+  //   failure {
+  //     script {
+  //       notifySlack("${currentBuild.currentResult}", "#FF0000")
+  //     }
+  //   }
+  // }  
 }
