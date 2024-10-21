@@ -21,9 +21,9 @@ pipeline {
   stages {
     stage("git-clone") {
       steps {
-        script {
-          // notifySlack("Started", "#00FF00")
-        }        
+        // script {
+        //   notifySlack("Started", "#00FF00")
+        // }        
         echo "Git clone from gitlab repository"
         git branch: 'dev', url: 'https://gitlab.com/qweadzs/jenkins-handson.git',
 	credentialsId: 'github-access-token'
