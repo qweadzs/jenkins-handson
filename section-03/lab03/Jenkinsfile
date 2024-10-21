@@ -26,6 +26,7 @@ pipeline {
         }        
         echo "Git clone from gitlab repository"
         git branch: 'dev', url: 'https://gitlab.com/nexweb/jenkins-handson.git'
+	credentialsId: 'github-access-token'
       }
     }
 
