@@ -1,6 +1,6 @@
-def notifySlack(STATUS, COLOR) {
-	slackSend (channel: '#my-channel', color: COLOR, message: STATUS+" : " +  "${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})")
-}
+// def notifySlack(STATUS, COLOR) {
+// 	slackSend (channel: '#my-channel', color: COLOR, message: STATUS+" : " +  "${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})")
+// }
 
 pipeline {
   agent any
@@ -22,7 +22,7 @@ pipeline {
     stage("git-clone") {
       steps {
         script {
-          notifySlack("Started", "#00FF00")
+          // notifySlack("Started", "#00FF00")
         }        
         echo "Git clone from gitlab repository"
         git branch: 'dev', url: 'https://gitlab.com/qweadzs/jenkins-handson.git',
@@ -133,13 +133,13 @@ pipeline {
   post {
     success {
       script {
-        notifySlack("${currentBuild.currentResult}", "#00FF00")
+        // notifySlack("${currentBuild.currentResult}", "#00FF00")
       }
     }
 
     failure {
       script {
-        notifySlack("${currentBuild.currentResult}", "#FF0000")
+        // notifySlack("${currentBuild.currentResult}", "#FF0000")
       }
     }
   }  
